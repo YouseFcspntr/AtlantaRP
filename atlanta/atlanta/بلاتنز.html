@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>Atlanta ESX - الصفحة المدمجة</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== الصفحة الأولى ===== -->
+  <section class="intro">
+    <h1>مرحبا بك في Atlanta ESX</h1>
+    <p>انزل لتعرف المزيد عن السيرفر</p>
+  </section>
+
+  <!-- ===== الصفحة الثانية ===== -->
+  <section id="section2" class="section2 sticky-section2">
+    <!-- الخلفية السوداء الشفافة -->
+    <div class="background-overlay"></div>
+
+    <!-- الصناديق -->
+    <div class="box">قوانين السيرفر</div>
+    <div class="box">كيف تدخل السيرفر</div>
+    <div class="box">سيرفر الديسكورد الخاص بنا</div>
+
+    <footer>
+      حقوق الطبع والنشر © 2025 Atlanta ESX. جميع الحقوق محفوظة.
+    </footer>
+  </section>
+
+  <!-- ===== زر العودة للأعلى ===== -->
+  <button class="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 5l-7 7h4v7h6v-7h4z"/></svg>
+  </button>
+
+  <script>
+    const boxes = document.querySelectorAll('.box');
+    const scrollButton = document.querySelector('.scroll-to-top');
+    const section2 = document.querySelector('#section2');
+
+    window.addEventListener('scroll', () => {
+      boxes.forEach(box => {
+        const boxTop = box.getBoundingClientRect().top;
+        const triggerBottom = window.innerHeight * 0.9;
+
+        if (boxTop < triggerBottom) {
+          box.classList.add('show');
+        }
+      });
+
+      if (window.scrollY + window.innerHeight >= section2.offsetTop) {
+        scrollButton.style.display = 'block';
+        scrollButton.style.animation = 'slideUp 0.5s ease-out forwards';
+        scrollButton.style.opacity = 1;
+      } else {
+        scrollButton.style.display = 'none';
+      }
+
+      if (window.scrollY === 0) {
+        scrollButton.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>الصفحة الثالثة - قوانين</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Tahoma', sans-serif;
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 70px 20px 20px 20px;
+    }
+
+    .page-header {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 1.2em;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      text-align: right;
+      display: inline-block;
+      width: 100%;
+      padding: 10px 20px;
+    }
+
+    .page-header:hover {
+      color: #00cfff;
+    }
+
+    .page-header::after {
+      content: '';
+      display: block;
+      margin-top: 5px;
+      width: 100%;
+      height: 2px;
+      background-color: #00cfff;
+      animation: slideRight 0.5s ease-in-out forwards;
+    }
+
+    .page-header:hover::after {
+      background-color: #00cfff;
+    }
+
+    @keyframes slideRight {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+   .atlanta-title {
+      font-size: 1.5em;
+      font-weight: block;
+      color: rgb(255, 243, 243);
+      margin-top: 5px;
+      width: 100%;
+      margin-bottom: 10px;
+      transition: color 0.3s ease;
+      cursor: pointer;
+      
+    }
+
+    .atlanta-title:hover {
+      color: #00cfff;
+    }
+    
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 2.5em;
+      color: #00cfff;
+    }
+
+    .divider {
+      width: 90%;
+      height: 2px;
+      background-color: #00cfff;
+      margin: 0 auto 40px auto;
+    }
+
+    .law-container {
+      margin: 20px auto;
+      width: 80%;
+      text-align: right;
+    }
+
+    .law-box {
+      background-color: #111;
+      border: 1px solid #00cfff;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      padding: 35px;
+      font-size: 1.3em;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .toggle-button {
+      background-color: #00cfff;
+      border: none;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-size: 1em;
+      align-self: flex-start;
+    }
+
+    .toggle-button:hover {
+      background-color: #0099cc;
+    }
+
+    .law-content {
+      display: none;
+      margin-top: 15px;
+      font-size: 1em;
+      width: 100%;
+    }
+
+    .arrow-link {
+      position: absolute;
+      top: 0px;
+      left: 20px;
+      display: inline-block;
+      padding: 10px;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .arrow-icon {
+      width: 40px;
+      height: auto;
+      filter: brightness(0) invert(1);
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .arrow-link:hover .arrow-icon {
+      transform: scale(1.1) translateX(5px);
+      filter: drop-shadow(0 0 5px #00cfff);
+    }
+  </style>
+  <script>
+    function toggleLaw(id) {
+      var content = document.getElementById(id);
+      content.style.display = content.style.display === "none" ? "block" : "none";
+    }
+    
+    
+  </script>
+</head>
+<body>
+  <div class="law-main-title">القوانـيـــن</div>
+
+  <a href="atlantaESX.html" class="arrow-link">
+    <img src="https://cdn.discordapp.com/attachments/1342808166869499905/1370363497132855387/curve-arrow-right-7.png?ex=681f39f5&is=681de875&hm=6549400c0a9a2a3e49328fb8a75034d9769bca8b4ac829f61d795b0a479f6e69&"
+         alt="Arrow"
+         class="arrow-icon" />
+  </a>
+
+  <div class="page-header" onclick="location.href='atlantaESX.html'">Atlanta ESX</div>
+
+  <div class="atlanta-title" onclick="location.href='atlantaESX.html'">Atlanta</div>
+  <h1>قـــوانـيــن</h1>
+  <div class="divider"></div>
+
+  <div class="law-container">
+    <!-- 13 قوانين -->
+    <div class="law-box">
+      <button class="toggle-button" onclick="toggleLaw('law1')">إظـهـــار</button>
+      <div id="law1" class="law-content">هذا هو نص القانون رقم 1</div>
+    </div>
+    <div class="law-box">
+      <button class="toggle-button" onclick="toggleLaw('law2')">إظـهـــار</button>
+      <div id="law2" class="law-content">هذا هو نص القانون رقم 2</div>
+    </div>
+    <div class="law-box">
+      <button class="toggle-button" onclick="toggleLaw('law3')">إظـهـــار</button>
+      <div id="law3" class="law-content">هذا هو نص القانون رقم 3</div>
+    </div>
+    <div class="law-box">
+      <button class="toggle-button" onclick="toggleLaw('law4')">إظـهـــار</button>
+      <div id="law4" class="law-content">هذا هو نص القانون رقم 4</div>
+    </div>
+    <div class="law-box">
+      <button class="toggle-button" onclick="toggleLaw('law5')">إظـهـــار</button>
+      <div id="law5" class="law-content">هذا هو نص القانون رقم 5</div>
+    </div>
+    <div class="law-box">
+      <button class="toggle-button" onclick="toggleLaw('law6')">إظـهـــار</button>
+      <div id="law6" class="law-content">هذا هو نص القانون رقم 6</div>
+    </div>
+    <div class="law-box">
+      <button class="toggle-button" onclick="toggleLaw('law7')">إظـهـــار</button>
+      <div id="law7" class="law-content">هذا هو نص القانون رقم 7</div>
+    </div>
+    <div class="law-box">
+      <button class="toggle-button" onclick="toggleLaw('law8')">إظـهـــار</button>
+      <div id="law8" class="law-content">هذا هو نص القانون رقم 8</div>
+    </div>
+    <div class="law-box">
+      <button class="toggle-button" onclick="toggleLaw('law9')">إظـهـــار</button>
+      <div id="law9" class="law-content">هذا هو نص القانون رقم 9</div>
+    </div>
+    <div class="law-box">
+      <button class="toggle-button" onclick="toggleLaw('law10')">إظـهـــار</button>
+      <div id="law10" class="law-content">هذا هو نص القانون رقم 10</div>
+    </div>
+    <div class="law-box">
+      <button class="toggle-button" onclick="toggleLaw('law11')">إظـهـــار</button>
+      <div id="law11" class="law-content">هذا هو نص القانون رقم 11</div>
+    </div>
+    <div class="law-box">
+      <button class="toggle-button" onclick="toggleLaw('law12')">إظـهـــار</button>
+      <div id="law12" class="law-content">هذا هو نص القانون رقم 12</div>
+    </div>
+    <div class="law-box">
+      <button class="toggle-button" onclick="toggleLaw('law13')">إظـهـــار</button>
+      <div id="law13" class="law-content">هذا هو نص القانون رقم 13</div>
+    </div>
+    <img src="" alt="" style="">
+  </div>
+  
+
+</body>
+</html>

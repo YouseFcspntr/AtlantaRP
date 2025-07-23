@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>الصفحة الثانية - Atlanta</title>
+  <style>
+    body {
+      margin: 0;
+      background-image: url('https://cdn.discordapp.com/attachments/1368855207290732585/1370232143933997076/2.jpg?ex=681ebfa0&is=681d6e20&hm=36ddf936387019c0e2912b56d116ac876e661efc2a3a726b5498bb5bdbe8dea1&');
+      background-size: cover;
+      background-position: center 0px; /* ← تحريك الخلفية للأسفل */
+      font-family: 'Tahoma', sans-serif;
+      color: white;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    .header-bar {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #00cfff;
+    }
+
+    .header-bar a.title {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2em;
+      position: relative;
+      transition: color 0.3s ease;
+      margin-left: 50px; /* ← تحريك النص لليمين */
+    }
+
+    .header-bar a.title::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0%;
+      height: 2px;
+      background-color: #00cfff;
+      transition: width 0.3s ease;
+    }
+
+    .header-bar a.title:hover {
+      color: #00aaff;
+    }
+
+    .header-bar a.title:hover::after {
+      width: 100%;
+    }
+
+    .arrow-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .arrow-btn svg {
+      width: 40px;
+      height: 40px;
+      stroke: white;
+      fill: none;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .arrow-btn:hover svg {
+      stroke: #00cfff;
+      animation: moveRight 0.4s forwards;
+    }
+
+    @keyframes moveRight {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(8px);
+      }
+    }
+
+    .box {
+      background-color: #00cfff;
+      color: white;
+      margin: 20px auto;
+      padding: 20px;
+      width: 60%;
+      box-shadow: 0 0 15px rgba(0,0,0,0.7);
+      border-radius: 15px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .box:hover {
+      transform: scale(1.03);
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      color: #00cfff;
+      background-color: transparent;
+      font-size: 0.9em;
+    }
+  </style>
+  <script>
+    function goToHome() {
+      window.location.href = "atlantaESX.html";
+    }
+    function goToRules() {
+      window.location.href = "rules.html";
+    }
+  </script>
+</head>
+<body>
+
+  <div class="header-bar">
+    <button class="arrow-btn" onclick="goToHome()">
+      <!-- SVG Arrow -->
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3,18A13.17,13.17,0,0,1,15.49,9H21" 
+              style="stroke-linecap:round; stroke-linejoin:round; stroke-width:2;" />
+        <polyline points="18 12 21 9 18 6" 
+              style="stroke-linecap:round; stroke-linejoin:round; stroke-width:2;" />
+      </svg>
+    </button>
+
+    <a href="atlantaESX.html" class="title">Atlanta ESX</a>
+  </div>
+
+  <div class="box" onclick="goToRules()">قوانين السيرفر</div>
+  <div class="box">كيف تدخل السيرفر</div>
+  <div class="box">سيرفر الديسكورد الخاص بنا</div>
+
+  <footer>
+    حقوق الطبع والنشر © 2025 Atlanta ESX. جميع الحقوق محفوظة.
+  </footer>
+
+</body>
+</html>
