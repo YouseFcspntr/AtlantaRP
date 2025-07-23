@@ -1,0 +1,252 @@
+/* إعداد عام */
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Tahoma', sans-serif;
+  color: rgb(255, 255, 255);
+  background-color: #f9f9f9;
+}
+
+/* ===== الصفحة الأولى ===== */
+.intro {
+  position: relative;
+  height: 100vh;
+  background-color: #000;
+  background-image: url("https://cdn.discordapp.com/attachments/1342808166869499905/1370806303915511940/301b78c159ce15fb.jpg?ex=683e801b&is=683d2e9b&hm=dda2808f2fb4af7dbcbb2e82604b4d0e7981b591547e1fae4ac356ef4aea6a23&");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* ✅ ده اللي بيعمل الـ bg-scroll */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+
+/* ===== تعديل العنوان والفقرة ===== */
+.intro h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.intro p {
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 6px rgb(0, 0, 0);
+}
+
+/* الفاصل الأبيض بين الصفحتين */
+.separator-line {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent 0%, rgb(0, 13, 85) 100%);
+  z-index: 2;
+}
+
+/* شريط التنقل */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  transition: all 0.7s ease;
+  z-index: 9999;
+  transform: translateY(100%);
+}
+
+.navbar.show {
+  background-color: rgba(32, 32, 32, 0.747); /* رمادي شفاف */
+  backdrop-filter: blur(8px); /* تأثير بلور للخلفية */
+  transform: translateY(0);
+}
+
+.navbar ul {
+  display: flex;
+  gap: 100px; /* مسافات بين الكلمات */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a.active {
+  color: #00cfff;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: all 0.3s ease;
+  position: relative; /* مهم علشان الـ ::after */
+}
+
+/* ==== خط متحرك تحت الكلمة ==== */
+.navbar ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; /* المسافة بين النص والخط */
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #00cfff;
+  transition: width 0.4s ease-in-out;
+  transform-origin: right;
+}
+
+.navbar ul li a:hover::after {
+  width: 100%;
+}
+
+.navbar ul li a:hover {
+  color: #00cfff;
+  transform: scaleX(1);
+}
+
+
+.logo-top-right {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.logo-top-right img {
+  width: 100px; /* عدل الحجم حسب اللوجو */
+  height: auto;
+}
+
+
+.section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px; /* ارتفاع التدرج */
+  background: linear-gradient(to top, black, transparent);
+  z-index: 2;
+}
+
+
+/* ===== الصفحة الثانية ===== */
+.section2 {
+  min-height: 100vh;
+  background-color: rgb(0, 13, 85);
+  padding-top: 100px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 20px;
+  
+  
+}
+
+.overlay-wrapper {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  padding: 40px 0;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  border-radius: 15px;
+  box-shadow: 0 0cap 90px #4cc6ff;
+  background-image: url('https://cdn.discordapp.com/attachments/1342808166869499905/1370806303915511940/301b78c159ce15fb.jpg?ex=6845c05b&is=68446edb&hm=2a3bf58c852f126a636c653db08f7e5a123d2f9752cbfb5e62f94fe4786bbe34&');
+  background-size: cover;
+  background-position: center;
+  padding-top: 100px;
+  padding-bottom: 20px; /* أو حتى 150px حسب ما يناسبك */
+    text-align: center;
+  
+}
+
+
+/* الفوتر */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  font-size: 0.9em;
+  padding-bottom: 20px;
+}
+
+/* ===== زر العودة للأعلى ===== */
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;  
+  
+  background-color: #000003ab;
+  border: 3px solid #00d0ff00;
+  color: #ffffff;
+  border-radius: 0;
+  padding: 10px;
+  font-size: 1.5em;
+  cursor: pointer;
+  box-shadow: 0 2px 10px #00d0ff00;
+  display: none;
+  opacity: 0;
+  animation: slideUp 0.6s forwards;
+  z-index: 9999;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 15px rgb(0, 0, 0); /* X, Y, Blur, لون */
+
+
+}
+
+.scroll-to-top:hover {
+  transform: scale(1.2);
+}
+
+.scroll-to-top:active {
+  animation: jumpUp 0.3s ease;
+}
+
+.scroll-to-top img {
+  width: 35px;
+  height: auto;
+   color: #00d0ff;
+  
+}
+
+/* Animation: ظهور السهم من الأسفل */
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Animation عند الضغط على السهم */
+@keyframes jumpUp {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
